@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/ly_top_bar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="48dp"-->
+<!--        android:background="@color/bg_topbar">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/txt_topbar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_centerInParent="true"-->
+<!--            android:gravity="center"-->
+<!--            android:text="提醒"-->
+<!--            android:textColor="@color/text_topbar"-->
+<!--            android:textSize="18sp" />-->
+
+<!--        <View-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="2px"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:background="@color/div_white" />-->
+
+<!--    </RelativeLayout>-->
+
+<!--    <FrameLayout-->
+<!--        android:id="@+id/main_content"-->
+<!--        android:layout_width="fill_parent"-->
+<!--        android:layout_height="fill_parent"-->
+<!--        android:layout_weight="1"-->
+<!--        tools:ignore="MissingConstraints" >-->
+
+        <RadioGroup
+            android:id="@+id/tab_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#ffffff"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints">
+
+
+            <RadioButton
+                android:id="@+id/rbChat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:background="#696969"
+                android:button="@null"
+                android:checked="true"
+                android:drawableTop="@drawable/tab_menu_channel"
+                android:gravity="center_horizontal|bottom"
+                android:paddingTop="2dp"
+                android:text="意见箱"
+                android:textColor="#FFFFFF" />
+
+            <RadioButton
+                android:id="@+id/rbAddress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:background="#696969"
+                android:button="@null"
+                android:drawableTop="@drawable/tab_menu_message"
+                android:gravity="center_horizontal|bottom"
+                android:paddingTop="2dp"
+                android:text="信访"
+                android:textColor="#FFFFFF" />
+
+            <RadioButton
+                android:id="@+id/rbFind"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:background="#696969"
+                android:button="@null"
+                android:drawableTop="@drawable/tab_menu_better"
+                android:gravity="center_horizontal|bottom"
+                android:paddingTop="2dp"
+                android:text="物业"
+                android:textColor="#FFFFFF" />
+
+            <RadioButton
+                android:id="@+id/rbMe"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:background="#696969"
+                android:button="@null"
+                android:drawableTop="@drawable/tab_menu_setting"
+                android:gravity="center_horizontal|bottom"
+                android:paddingTop="2dp"
+                android:text="我"
+                android:textColor="#FFFFFF" />
+        </RadioGroup>
+
+    <View
+        android:id="@+id/div_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:layout_above="@id/tab_menu"
+        android:background="@color/div_white" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/div_tab_bar" />
+
+<!--    </FrameLayout>-->
+
+
+
+</RelativeLayout>
