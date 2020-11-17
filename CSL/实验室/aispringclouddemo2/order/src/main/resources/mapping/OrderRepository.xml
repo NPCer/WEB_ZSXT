@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.miluyas.repository.OrderRepository">
+
+    <select id="findAll" resultType="Order">
+        select * from xt_order limit #{param1},#{param2}
+    </select>
+
+    <select id="count" resultType="int">
+        select count(id) from xt_order
+    </select>
+
+    <select id="findById" parameterType="long" resultType="Order">
+        select * from xt_order where id = #{id}
+    </select>
+
+    <insert id="save" parameterType="Order">
+        insert into xt_order(content,add_time,deadline_time) values(#{content},#{add_time},#{deadline_time})
+    </insert>
+
+    <update id="update" parameterType="Order">
+        update xt_order set content = #{content},add_time = #{add_time},deadline = #{deadline_time} where id = #{id}
+    </update>
+
+    <delete id="deleteById" parameterType="long">
+        delete from xt_order where id = #{id}
+    </delete>
+</mapper>

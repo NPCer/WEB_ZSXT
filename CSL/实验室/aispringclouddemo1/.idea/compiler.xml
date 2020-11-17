@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="eurekaserver" />
+        <module name="todo" />
+        <module name="oder" />
+        <module name="ordrer" />
+        <module name="oder1" />
+        <module name="configserver" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="oder" target="1.8" />
+      <module name="oder1" target="1.8" />
+      <module name="order" target="1.8" />
+      <module name="ordrer" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="aispringclouddemo" options="-parameters" />
+      <module name="configserver" options="-parameters" />
+      <module name="eurekaserver" options="-parameters" />
+      <module name="oder" options="-parameters" />
+      <module name="oder1" options="-parameters" />
+      <module name="order" options="-parameters" />
+      <module name="ordrer" options="-parameters" />
+      <module name="todo" options="-parameters" />
+    </option>
+  </component>
+</project>
