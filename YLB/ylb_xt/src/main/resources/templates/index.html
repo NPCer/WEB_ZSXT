@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <script src="../static/jquery/jquery-1.8.3.js" th:src="@{/jqeury/jquery-1.8.3.js}" ></script>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        h2{
+            font-family: 楷书;
+        }
+        table{
+            line-height: 40px;
+            width: 800px;
+        }
+        #save{
+            margin-top: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h2 align="center">食堂预定</h2>
+    <table align="center"border="1" cellpadding="0" cellspacing="0">
+        <tr>
+            <th>编号</th>
+            <th>预定食堂</th>
+            <th>使用部门</th>
+            <th>预定用餐人数</th>
+            <th>预定用餐事由</th>
+            <th>预定用餐开始时间</th>
+            <th>预定用餐结束时间</th>
+            <th>用餐特殊备注要求</th>
+            <th>预定审核状态</th>
+        </tr>
+        <tr th:each="item : ${xt_canteen_rsv}" th:id="${item.id}">
+            <td th:text="${item.id}">${p.id}</td>
+            <td th:text="${item.canteen_id}">${p.canteen_id}</td>
+            <td th:text="${item.dept_id}">${p.dept_id}</td>
+            <td th:text="${item.user_num}">${p.user_num}</td>
+            <td th:text="${item.reason}">${p.reason}</td>
+            <td th:text="${item.begin_time}">${p.begin_time}</td>
+            <td th:text="${item.end_time}">${p.end_time}</td>
+            <td th:text="${item.option}">${p.option}</td>
+            <td th:text="${item.status}">${p.status}</td>
+        </tr>
+    </table>
+    <table align="center" id="save">
+    </table>
+</div>
+
+<script layout:fragment="js" type="text/javascript" >
+    function del(id){
+        if(confirm("确定要删除该条信息吗？")){
+            $.ajax({
+                url : "/del",
+                type : "DELETE",
+                data : {id: id},
+                dataType: "json",
+                success:function(data){
+                    if(data.ok==true){
+                        alert("删除成功");
+                        $("#"+id).remove();
+                    }else{
+                        alert("删除失败");
+                    }
+                }
+            })
+        }
+    }
+</script>
+</body>
+</html>
