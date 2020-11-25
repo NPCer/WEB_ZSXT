@@ -1,10 +1,8 @@
 package com.example.zxy.Javabean;
 
-import java.io.Serializable;
+import cn.bmob.v3.BmobUser;
 
-import cn.bmob.v3.BmobObject;
-
-public class xt_user extends BmobObject implements Serializable {
+public class User extends BmobUser {
 
     private String password;
     private String username;

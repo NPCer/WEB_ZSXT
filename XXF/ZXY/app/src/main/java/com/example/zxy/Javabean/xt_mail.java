@@ -78,4 +78,8 @@ public class xt_mail extends BmobObject implements Serializable {
     public void setReply(String reply) {
         this.reply = reply;
     }
+
+    public Object setContent() {
+        return content;
+    }
 }
