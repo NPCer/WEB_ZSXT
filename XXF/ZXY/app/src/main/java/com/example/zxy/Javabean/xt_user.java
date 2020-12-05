@@ -6,11 +6,19 @@ import cn.bmob.v3.BmobObject;
 
 public class xt_user extends BmobObject implements Serializable {
 
+    private int id;
     private String password;
-    private String username;
+    private String name;
     private int dept_id;
     private Boolean is_leader;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getPassword() {
         return password;
@@ -20,12 +28,12 @@ public class xt_user extends BmobObject implements Serializable {
         this.password = password;
     }
 
-    public String getUserame() {
-        return username;
+    public String getName() {
+        return name;
     }
 
-    public void setUsername(String name) {
-        this.username = name;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getDept_id() {
@@ -43,5 +51,4 @@ public class xt_user extends BmobObject implements Serializable {
     public void setIs_leader(Boolean is_leader) {
         this.is_leader = is_leader;
     }
-
 }
